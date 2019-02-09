@@ -9526,9 +9526,4 @@ if(!message.guild.member(client.user).hasPermission("MANAGE_NICKNAMES")) return 
 
 
 
-
-
-client.login(process.env.BOT_TOKEN);
-
-
-client.login("NTQzNzc3MjU5NzM2MDA2Njc0.D0BflA.AmbP8rTzuUwpsmNYpZhPClz-1XY')
+client.login("NTQzNzc3MjU5NzM2MDA2Njc0.D0CF-g.HD09Mij3w4JAVh9TeK2oA9yGSSc')
