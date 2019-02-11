@@ -1,6 +1,3 @@
-const Discord = require('discord.js');                                                                                                                                                                                            
-const client = new Discord.Client();  
-console.log("I am Ready"); 
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const bot = new Discord.Client();
@@ -9526,4 +9523,6 @@ if(!message.guild.member(client.user).hasPermission("MANAGE_NICKNAMES")) return 
 
 
 
-client.login("NTQzNzc3MjU5NzM2MDA2Njc0.D0CF-g.HD09Mij3w4JAVh9TeK2oA9yGSSc')
+
+
+client.login(NTQzNzc3MjU5NzM2MDA2Njc0.D0N_XQ.HY54dIenox0HFrF4wzyW1AnbUR0);
