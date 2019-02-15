@@ -109,4 +109,4 @@ client.on("guildMemberAdd", member => {
       
       
  // THIS  MUST  BE  THIS  WAY
-client.login(process.env.NTQ2MDM3MDEzMTU4MDM1NDc2.D0id1A.hoGL7EhezBrBcRE8MMko-hEe9YE);
+client.login("NTQ2MDQ0MjY5Njg1NzY4MjQw.D0ie8g.aJOHUits3BjwqbNnXTjRL4BfS1E");
