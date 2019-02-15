@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-var prefix = "#";
+var prefix = "!";
 client.on("message", message => {
 
             if (message.content.startsWith(prefix + "bc")) {
@@ -12,7 +12,7 @@ client.on("message", message => {
 })
  message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'online').size}\` :  عدد الاعبين الذين وصلت لهم الرساله بنجاح`); 
  message.delete(); 
-};     
+};    
 });
 
 
@@ -29,4 +29,4 @@ client.user.setStatus("dnd")
 
 
 
-client.login("NTQ1OTY5MDQyMDc1Mjg3NTky.D0iUzQ.Sf5Mb_WzTBIB4ETw8m5stjF9O9g");
+client.login("NTQ2MDM3MDEzMTU4MDM1NDc2.D0iYVA.NOt_thCXVqlEhOD5HqDv-1i9diQ");
