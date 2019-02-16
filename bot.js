@@ -1,6 +1,7 @@
 const Discord = require('discord.js');                                                                                                                                                                                            
 const client = new Discord.Client();  
 console.log("I am Ready"); 
+var prefix = "!";
 
 client.on('message', message => {
     if(!message.channel.guild) return;
