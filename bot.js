@@ -50,7 +50,7 @@ msg.delete();
 });
 
   client.on('message', message => {
-    if (message.content.startsWith("$Link")) {
+    if (message.content.startsWith("")) {
 
   message.channel.createInvite({
         thing: true,
@@ -275,7 +275,7 @@ client.on('message', message =>{
         .addField("- Reason :", reason);
     
         let reportschannel = message.guild.channels.find(`name`, "reports");
-        if(!reportschannel) return message.channel.send("علشان ارد عليك Support Team يزلمه سوي روم اسمه");
+        if(!reportschannel) return message.channel.send("علشان ارد عليك reports يزلمه سوي روم سميه ");
     
     
         message.delete().catch(O_o=>{});
