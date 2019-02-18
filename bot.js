@@ -70,7 +70,7 @@ message.author.send(`**مدة الرابط : يـوم
 
 
 client.on('message', function(message) {
-    if (message.content == "#clear") {
+    if (message.content == "$clear") {
         if (message.member.hasPermission("MANAGE_MESSAGES")) {
             message.channel.fetchMessages()
                .then(function(list){
@@ -104,7 +104,7 @@ message.channel.awaitMessages(filter, { max: 1, time: 15000, errors: ['time'] })
    const filte = m => m.content.startsWith("لا");
 message.channel.awaitMessages(filte, { max: 1, time: 15000, errors: ['time'] })
 .then(collected =>{ 
-   message.channel.send(`  **${message.author} تم رفض عرضك** `);
+   message.channel.send(`  **${message.author} تم رفض عرضك اعمل نفسك ميت** `);
 })
         
   }
@@ -262,7 +262,7 @@ client.on('message', message =>{
     if(cmd === `${prefix}report`){
         let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         if(!rUser) return message.channel.send("Idk who 2 report ??");
-        let reason = args.join(" ").slice(22);
+        let reason = args.join/(" ").slice(22);
         if(!reason) return message.channel.send("What is the reason ??");
     
         let reportEmbed = new Discord.RichEmbed()
@@ -450,7 +450,7 @@ const prefix = "$";
   .addField("User:",  `[ + ${user.tag} + ]`)
   .addField("By:", `[  + ${message.author.tag} +  ]`)
   .addField("Reason:", `[ + ${reason} +  ]`)
-  client.channels.get("492086928397565952").send({embed : banembed})
+  client.channels.get("469427192011423764").send({embed : banembed})
 }
 });
 
@@ -696,7 +696,7 @@ client.on("message", (message) => {
             message.channel.send(`:white_check_mark: تم انشاء تذكرتك, #${c.name}.`);
             const embed = new Discord.RichEmbed()
                 .setColor(0xCF40FA)
-                .addField(`Hey ${message.author.username}!`, `تم فتح تذكرة الرجاء انتظار الى حين يأتي مشرف ويقوم بلرد عليك`)
+                .addField(`Hey ${message.author.username}!`, `الرجاء الانتظار سيتم الرد عليك قريبا ان شاء الله @support team`)
                 .setTimestamp();
             c.send({
                 embed: embed
@@ -708,9 +708,9 @@ client.on("message", (message) => {
   if (message.content.startsWith("$close")) {
         if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(`You can't use the close command outside of a ticket channel.`);
  
-       message.channel.send(`هل انت متأكد من اقفالك للتذكرة اذا متأكد اكتب $confirm`)
+       message.channel.send(`هل انت متأكد من اقفالك للتذكرة اذا متأكد اكتب $close`)
            .then((m) => {
-               message.channel.awaitMessages(response => response.content === '$confirm', {
+               message.channel.awaitMessages(response => response.content === '$close', {
                        max: 1,
                        time: 10000,
                        errors: ['time'],
