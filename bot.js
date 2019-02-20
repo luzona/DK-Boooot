@@ -735,8 +735,6 @@ client.on("message", (message) => {
     
 
 
-
-
 client.on("guildMemberAdd", member => {
 
   member.createDM().then(function (channel) {
@@ -775,9 +773,6 @@ https://discordapp.com/oauth2/authorize?scope=bot&client_id=547131839945637888&p
 
 
 
-
-}).catch(console.error)
-
 })
 client.on('guildCreate', guild => {
 
@@ -801,29 +796,6 @@ client.on('guildCreate', guild => {
 
 });
 
-
-
-	client.on('guildDelete', guild => {
-
-  var embed = new Discord.RichEmbed()
-
-  .setColor("RANDOM")
-
-  .setDescription(`**شكرا لك لاستعمال البوت فهو متواجد في **`)
-
-       .addField("Servers :", client.guilds.size)
-
-       .addField("Users :",  client.users.size)
-
-	   .addField("Channels :", client.channels.size)
-
-	   .addField("Bot Support : https://discord.gg/Dajw6FM")
-
-	   .setFooter('DK BOT' , client.user.avatarURL)
-
-      guild.owner.send(embed)
-
-});
 
 
 
