@@ -773,32 +773,6 @@ https://discordapp.com/oauth2/authorize?scope=bot&client_id=547131839945637888&p
 
 
 
-})
-client.on('guildCreate', guild => {
-
-  var embed = new Discord.RichEmbed()
-
-  .setColor("RANDOM")
-
-  .setDescription(`**شكرا لك لاضافة البوت لسيرفرك فهو متواجد في**`)
-
-         .addField("Servers :", client.guilds.size)
-
-       .addField("Users :",  client.users.size)
-
-	   .addField("Channels :", client.channels.size)
-
-	   .addField("Bot Support : https://discord.gg/Dajw6FM")
-
-	   .setFooter('DK BOT' , client.user.avatarURL)
-
-      guild.owner.send(embed)
-
-});
-
-
-
-
 
 client.on('ready', () => {
    console.log(`----------------`);
@@ -810,7 +784,13 @@ client.on('ready', () => {
 client.user.setGame(`$help | DK Bot`,"http://twitch.tv/DJ")
 client.user.setStatus("dnd")
 });
+
+
+ }).catch(console.error) 
+
  
+
+}) 
  
  
 client.on('message' , message => {
