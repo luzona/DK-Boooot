@@ -708,9 +708,9 @@ client.on("message", (message) => {
   if (message.content.startsWith("$close")) {
         if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(`You can't use the close command outside of a ticket channel.`);
  
-       message.channel.send(`هل انت متأكد من اقفالك للتذكرة اذا متأكد اكتب $confirm`)
+       message.channel.send(`هل انت متأكد من اقفالك للتذكرة اذا متأكد اكتب $close`)
            .then((m) => {
-               message.channel.awaitMessages(response => response.content === '$confirm', {
+               message.channel.awaitMessages(response => response.content === '$close', {
                        max: 1,
                        time: 10000,
                        errors: ['time'],
@@ -741,6 +741,27 @@ client.user.setStatus("dnd")
 });
  
 
+client.on("guildMemberAdd", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(` 
+
+${member}  
+
+**مرحبا بك بالسيرفر | Welcome To Server
+
+Bot Name | اسم البوت : @👑ِ𝓓𝓚👑#0511 
+Servers | السيرفرات : ${client.guilds.size} 🌍
+Users | المستخدمين : ${client.users.size} 👥
+Bot Prefix | بريفكس البوت : [$]
+Help Command | امر المساعدة : $help
+Owner Bot | صاحب البوت : 👑ِ𝓓𝓚👑LuZoNa#5083 
+
+لآضافة البوت من هاذا الرابط | You Can Invite Bot From This Link
+**
+https://discordapp.com/oauth2/authorize?scope=bot&client_id=547131839945637888&permissions=70642768
+`) 
+}).catch(console.error)
+})
 
  
 client.on("message", message => {
