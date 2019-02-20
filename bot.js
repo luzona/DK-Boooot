@@ -671,6 +671,36 @@ message.channel.send({embed});
 }
 
 });
+
+
+
+client.on("message", message => {
+ if (message.content === "$help") {
+  const embed = new Discord.RichEmbed()  
+      .setColor("#FABE16") 
+      		 .setFooter('DK BOT' , client.user.avatarURL)
+      .setDescription(`
+
+	  **Select One:**
+			 
+**[ $help-public ✨  أوامر عامة ]**
+
+**[ $help-admin 🙏 أوامر إدارية ]**
+			 
+**[ $help-games 🎮 أوامر الاألعاب ]**
+
+**[ $help-music 🔊 أوامر الموسيقى ]**
+
+**[ $help-info ✨ أوامر معلومات ]**
+
+**[ $help-owner 🔒 أوامر صاحب البوت ]**
+	  `)
+   message.channel.sendEmbed(embed)
+    
+   }
+   }); 
+
+
 lient.on("message", message => {
 	var prefix = "$";
  if (message.content === "$help-public") {
@@ -944,31 +974,6 @@ client.user.setStatus("dnd")
 });
  
  
- 
-client.on("message", message => {
- if (message.content === "$help") {
-  const embed = new Discord.RichEmbed()  
-      .setColor("#FABE16") 
-      		 .setFooter('DK BOT' , client.user.avatarURL)
-      .setDescription(`
-	  
-	      **Select One:**
-			 
-**[ $help-public ✨  أوامر عامة ]**
-
-**[ $help-admin 🙏 أوامر إدارية ]**
-			 
-**[ $help-games 🎮 أوامر الاألعاب ]**
-
-**[ $help-music 🔊 أوامر الموسيقى ]**
-
-**[ $help-info ✨ أوامر معلومات ]**
-
-**[ $help-owner 🔒 أوامر صاحب البوت ]**
-	  `)
-   message.channel.sendEmbed(embed)
-    
-   }
-   }); 
+      
  
 client.login(process.env.BOT_TOKEN);
