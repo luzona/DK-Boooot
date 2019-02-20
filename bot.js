@@ -727,107 +727,7 @@ client.on("message", (message) => {
    }
  
 });
-
-
-client.on("message", message => {
-
- if (message.content === "$help") {
-
-  const embed = new Discord.RichEmbed()  
-
-      .setColor("#FABE16") 
-
-      		 .setFooter('DK BOT' , client.user.avatarURL)
-      .setDescription(`
-
-	      **Select one:**
-
-**[ -help-public ✨  أوامر عامة ]**
-
-
-**[ -help-admin 🙏 أوامر إدارية ]**
-			 
-
-**[ -help-games 🎮 أوامر الاألعاب ]**
-
-
-**[ -help-music 🔊 أوامر الموسيقى ]**
-
-
-**[ -help-info ✨ أوامر معلومات ]**
-
-
-**[ -help-owner 🔒 أوامر صاحب البوت ]**
-	  `)
-   message.channel.sendEmbed(embed)
-    
-   }
-   }); 
-
-
- client.on("guildMemberAdd", member => {
-
-  member.createDM().then(function (channel) {
-
-  return channel.send(` 
-
-${member}  
-
-**مرحبا بك بالسيرفر | Welcome To Server
-
-
-
-Bot Name | اسم البوت : 👑ِDK Bot👑ِ#6238 
-
-Servers | السيرفرات : ${client.guilds.size} 🌍
-
-Users | المستخدمين : ${client.users.size} 👥
-
-Bot Prefix | بريفكس البوت : [$]
-
-Help Command | امر المساعدة : $help
-
-Owner Bot | صاحب البوت : 👑ِDK👑ِ-LuZoNa#5083
-
-
-لآضافة البوت من هاذا الرابط | You Can Invite Bot From This Link
-
-**
-
-https://discordapp.com/oauth2/authorize?scope=bot&client_id=547131839945637888&permissions=70642768
-`) 
-}).catch(console.error)
-})
-
-
-
-client.on('message', message => {
-	 var prefix ="$";
- if(message.content.startsWith(prefix +"server")){
-if(!message.channel.guild) return; 
-const millis = new Date().getTime() - message.guild.createdAt.getTime();
-const now = new Date();
-dateFormat(now, 'dddd, mmmm dS, yyyy, h:MM:ss TT');
-const verificationLevels = ['None', 'Low', 'Medium', 'Insane', 'Extreme'];
-const days = millis / 1000 / 60 / 60 / 24;
-let roles = client.guilds.get(message.guild.id).roles.map(r => r.name);
-var embed  = new Discord.RichEmbed()
-.setAuthor(message.guild.name, message.guild.iconURL)
-.addField("**🆔 Server ID:**", message.guild.id,true)
-.addField("**📅 Created On**", message.guild.createdAt.toLocaleString(),true)
-.addField("**👑 Owned by**",`${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`)
-.addField("👥 Members ",`[${message.guild.memberCount}]`,true)
-.addField('**💬 Channels **',`**${message.guild.channels.filter(m => m.type === 'text').size}**` + ' text | Voice  '+ `**${message.guild.channels.filter(m => m.type === 'voice').size}** `,true)
-.addField("**🌍 Others **" , message.guild.region,true)
-.addField("** 🔐 Roles **",`**[${message.guild.roles.size}]** Role `,true)
-.setColor('#000000')
-message.channel.sendEmbed(embed)
-
-
-}
-});
-
-
+ 
 
 client.on('ready', () => {
    console.log(`----------------`);
@@ -836,11 +736,36 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : LuZoNa ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`$help | DK Bot`,"http://twitch.tv/DJ")
+client.user.setGame(`$help | By Gaz`,"http://twitch.tv/DJ")
 client.user.setStatus("dnd")
 });
  
  
  
+client.on("message", message => {
+ if (message.content === "$help") {
+  const embed = new Discord.RichEmbed()  
+      .setColor("#FABE16") 
+      		 .setFooter('DK BOT' , client.user.avatarURL)
+      .setDescription(`
+	  
+	      **Select One:**
+			 
+**[ $help-public ✨  أوامر عامة ]**
+
+**[ $help-admin 🙏 أوامر إدارية ]**
+			 
+**[ $help-games 🎮 أوامر الاألعاب ]**
+
+**[ $help-music 🔊 أوامر الموسيقى ]**
+
+**[ $help-info ✨ أوامر معلومات ]**
+
+**[ $help-owner 🔒 أوامر صاحب البوت ]**
+	  `)
+   message.channel.sendEmbed(embed)
+    
+   }
+   }); 
  
 client.login(process.env.BOT_TOKEN);
