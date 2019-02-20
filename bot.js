@@ -801,6 +801,36 @@ https://discordapp.com/oauth2/authorize?scope=bot&client_id=547131839945637888&p
 
 
 
+client.on('message', message => {
+
+	 var prefix ="$";
+
+ if(message.content.startsWith(prefix +"server")){
+if(!message.channel.guild) return; 
+const millis = new Date().getTime() - message.guild.createdAt.getTime();
+const now = new Date();
+dateFormat(now, 'dddd, mmmm dS, yyyy, h:MM:ss TT');
+const verificationLevels = ['None', 'Low', 'Medium', 'Insane', 'Extreme'];
+const days = millis / 1000 / 60 / 60 / 24;
+let roles = client.guilds.get(message.guild.id).roles.map(r => r.name);
+var embed  = new Discord.RichEmbed()
+.setAuthor(message.guild.name, message.guild.iconURL)
+.addField("**🆔 Server ID:**", message.guild.id,true)
+.addField("**📅 Created On**", message.guild.createdAt.toLocaleString(),true)
+.addField("**👑 Owned by**",`${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`)
+.addField("👥 Members ",`[${message.guild.memberCount}]`,true)
+.addField('**💬 Channels **',`**${message.guild.channels.filter(m => m.type === 'text').size}**` + ' text | Voice  '+ `**${message.guild.channels.filter(m => m.type === 'voice').size}** `,true)
+.addField("**🌍 Others **" , message.guild.region,true)
+.addField("** 🔐 Roles **",`**[${message.guild.roles.size}]** Role `,true)
+.setColor('#000000')
+message.channel.sendEmbed(embed)
+
+
+}
+});
+
+
+
 client.on('ready', () => {
    console.log(`----------------`);
       console.log(`Desert Bot- Script By : EX Clan`);
@@ -814,44 +844,5 @@ client.user.setStatus("dnd")
  
  
  
-client.on('message' , message => {
-if(message.content === '$help') {
-  var EsTeKnAN = new Discord.RichEmbed()
-  .setColor('RANDOM')
-message.author.send(`
-***__وصف عن البوت__***
-**
-─════════════ {✯اوامر البوت✯} ════════════─
-❧ $bc ➺ برودكاست ب امبيد وبدون
-❧ $Link ➺ رابط انفايت للسيرفر
-❧ $clear ➺ مسح الشات
-❧ $server ➺ لعرض معلومات السيرفر
-❧ $marry ➺ لعبة الزواج
-❧ $kf ➺ لعبة كف
-❧ $mc ➺ قفل الشات
-❧ $umc ➺ فتح الشات
-❧ $hacked ➺ لعبة التهكير
-❧ $apply ➺ تقديم / لازم في روم اسمه التقديمات
-❧ $report ➺ تبليغ / لازم في روم اسمه repoerts
-❧ $avatar ➺ عرض صورتك او شخص تمنشنه
-❧ $bans ➺ يقولك عدد الاشخاص المبندين من السيرفر
-❧ $ct ➺ انشاء روم كتابي
-❧ $cv ➺ انشاء روم صوتي
-❧ $setVoice ➺ يسويلك روم ويقولك عدد الاشخاص في الرومات الصوتية
-❧ $move ➺ سحب عضو للروم الصوتي
-❧ $ban ➺ تبنيد عضو من السيرفر
-❧ $kick ➺ طرد عضو من السيرفر
-❧ $mute ➺ اعطاء ميوت كتابي
-❧ $unmute ➺ فك الميوت الكتابي
-❧ $rooms ➺ لعرض الرومات الموجودة في السيرفر
-❧ $roles ➺ لعرض الرتب الموجودة في السيرفر
-❧ $say ➺ البوت يكرر كلام انته تحدده
-❧ $id ➺ لعرض معلوماتك
-❧ $new ➺ لانشاء تذكرة
-─════════════ {✯ By ! ' 👑ِDK👑ِ-LuZoNa#5083 ✯} ════════════─
-**
-`);
-}
-})
  
 client.login(process.env.BOT_TOKEN);
