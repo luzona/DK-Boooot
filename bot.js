@@ -671,6 +671,209 @@ message.channel.send({embed});
 }
 
 });
+lient.on("message", message => {
+	var prefix = "$";
+ if (message.content === "$help-public") {
+    message.reply(`**
+	
+    شيك على الخاص
+	 Check Your DM
+	 **`)
+  const here = new Discord.RichEmbed() 
+      .setColor("GOLD")
+      .setFooter('DK BOT' , client.user.avatarURL)
+      .setDescription(`
+**  📌 Public Commands | أوامر عامة 📌**
+📍**-quran** = فتح المصحف | Open Quran
+📍**-bot** = معلومات عن البوت | Bot Stats
+📍**-mb** = معرفة حالة الاعضاء | Members Stats
+📍**-allbots** = معرفة عدد البوتات | Number Of BoTs
+📍**-tr** = الترجمة | Translate
+📍**-say** = كتابة في امبيد | Write In Embad
+📍**-ping** = سرعة اتصال البوت | Bot Ping
+📍**-inv** = لاضافة البوت لسيرفرك | Invite The BoT
+📍**-mcskin** = سكنات ماينكرافت | Minecraft Skins
+📍**-id** = الايدي | Your ID
+📍**-perms** = لرؤية صلاحياتك | Your Permissions
+📍**-rooms** = لرؤية كل الرومات | See All Rooms
+📍**-server** = معلومات عن السيرفر | Server Info
+📍**-count **= معرفة عدد اعضاء السيرفر | MemBers Count
+📍**-sug **= للاقتراح | Suggestion
+📍**-avatar** = افاتار حقك | Your AvaTar
+📍**-tag** = كلام بس بشكل حلو  | Write Words But BeTTer
+📍**-afk** = ادا تبي تافك  | For AFK
+📍**-back** = ادا رجعت  | For Longer AFK
+
+`)
+ message.author.sendEmbed(here)
+}
+   }); 
+
+
+   client.on("message", message => {
+	var prefix = "$";
+ if (message.content === "$help-admin") {
+    message.reply(`**
+	
+    شيك على الخاص
+	 Check Your DM
+	 **`)
+  const here = new Discord.RichEmbed() 
+      .setColor("GOLD")
+      .setFooter('DK BOT' , client.user.avatarURL)
+      .setDescription(`
+ ** 📌 Admin Commands | أوامر إدارية 📌**
+📍**-mute** = لأعطاء شخص ميوت | Mute Member
+📍**-clear** = لمسح الشات | Clear ChaT
+📍**-bc** = برودكاست للجميع | BroDCasT All MemBers
+📍**-kick** = لطرد عضو | Kick MemBer
+📍**-ban** = لتبنيد عضو | Ban MemBer
+📍**-dc** = حدف الرومات | DeleTe Rooms
+📍**-dr** = حدف الرتب | DeleTe Ranks
+📍**-mutechannel** = لقفل الشات | Mute ChanneL
+📍**-unmutechannel** = لفتح الشات | UnMute ChanneL
+
+
+`)
+ message.author.sendEmbed(here)
+}
+   }); 
+   
+   
+
+      client.on("message", message => {
+	var prefix = "$";
+ if (message.content === "$help-games") {
+    message.reply(`**
+	
+    شيك على الخاص
+	 Check Your DM
+	 **`)
+  const here = new Discord.RichEmbed() 
+      .setColor("GOLD")
+      .setFooter('DK BOT' , client.user.avatarURL)
+      .setDescription(`
+ ** 📌 Games Commands | أوامر الألعاب 📌**
+📍**-marry**
+📍**-لو خيروك**
+📍**-minecraft**
+📍**-صراحة**
+📍**-عقاب**
+📍**-خواطر**
+📍**-حب**
+📍**-مريم**
+`)
+ message.author.sendEmbed(here)
+}
+   }); 
+
+
+
+      client.on("message", message => {
+	var prefix = "$";
+ if (message.content === "$help-music") {
+    message.reply(`**
+	
+    شيك على الخاص
+	 Check Your DM
+	 **`)
+  const here = new Discord.RichEmbed() 
+      .setColor("GOLD")
+	  .setFooter('DK BOT' , client.user.avatarURL)
+      .setDescription(`
+ ** 📌 Music Commands | أوامر الموسيقى 📌**
+📍**-play** = لتشغيل اغنية برابط | Play Music With Link
+📍**-skip** = لتجاوز الاغنية | Skip Music
+📍**-pause** = للايقاف المؤقت | Pause Music
+📍**-resume** = لتشغيل الاغنية المتوقفة  | Resume Music
+📍**-vol** = لتغيير درجة الصوت | Change Sound Level
+📍**-stop** = لايقاف الموسيقى | Stop Music
+📍**-np** = لمعرفة الاغنية المشغلة | Now Playing ..!
+📍**-queue** = لمعرفة قائمة التشغيل | PlayList Menu
+`)
+ message.author.sendEmbed(here)
+}
+   }); 
+
+
+      client.on("message", message => {
+	var prefix = "$";
+ if (message.content === "$help-owner") {
+	  if (message.author.id !== '459397282169618462') return message.reply(' :x: **You Are Not Bot Owner | أنت لست صاحب البوت** :x: ')
+ if(!message.author.id === '459397282169618462') return;
+    message.reply(`**
+	
+    شيك على الخاص
+	 Check Your DM
+	 **`)
+  const here = new Discord.RichEmbed() 
+      .setColor("GOLD")
+	  .setFooter('DK BOT' , client.user.avatarURL)
+      .setDescription(`
+ ** 📌 Owner Commands | أوامر الأونر 📌**
+📍**->bcall**
+📍**-ownerbot**
+📍**-ipservers**
+📍**-setplaying**
+📍**-setlistening**
+📍**-setwatching**
+📍**-setstreaming**
+📍**-setname**
+📍**-setavatar**
+📍**-DM**
+`)
+ message.author.sendEmbed(here)
+}
+   }); 
+
+
+
+
+    client.on("message", message => {
+	var prefix = "$";
+ if (message.content === "$help-info") {
+    message.reply(`**
+	
+    شيك على الخاص
+	 Check Your DM
+	 **`)
+  const here = new Discord.RichEmbed() 
+      .setColor("GOLD")
+	  .setFooter('DK BOT' , client.user.avatarURL)
+      .setDescription(`
+ ** 📌 Info Commands | معلومات عامة 📌**
+📍 **باللغة العربية :**
+
+انشئ روم بأسم **welcome**
+ليرحب البوت بكل واحد يدخل السيرفر
+
+انشئ روم بأسم **left**
+ليودع البوت كل واحد يغادر السيرفر
+
+انشئ روم بأسم **suggestions**
+سيكون الروم مخصص للاقتراحات 
+لحتى يتمكنوا الاعضاء من الاقتراح
+يجب استخدام هذا الامر **-sug**
+
+
+📍 **English Language :**
+
+Create a **welcome ** Room
+To welcome the bot every one enters the server
+
+Create a **left** Room
+To put out the bot each one leaves the server
+
+Create a **suggestions** Room
+The room will be for suggestions
+Even members can Suggest
+Members must use this command **-sug**
+`)
+ message.author.sendEmbed(here)
+}
+   }); 
+
+
 
 client.on("message", (message) => {
     /// ALPHA CODES
