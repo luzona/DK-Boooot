@@ -70,7 +70,7 @@ message.author.send(`**مدة الرابط : يـوم
 
 
 client.on('message', function(message) {
-    if (message.content == "#clear") {
+    if (message.content == "$clear") {
         if (message.member.hasPermission("MANAGE_MESSAGES")) {
             message.channel.fetchMessages()
                .then(function(list){
@@ -752,15 +752,14 @@ client.on("message", message => {
 	  
 	      **Select One:**
 			 
-**[ -help-public ✨  أوامر عامة ]**
+**[ $help-public ✨  أوامر عامة ]**
 
-**[ -help-admin 🙏 أوامر إدارية ]**
+**[ $help-admin 🙏 أوامر إدارية ]**
 			 
-**[ -help-games 🎮 أوامر الاألعاب ]**
+**[ $help-games 🎮 أوامر الاألعاب ]**
 
-**[ -help-info ✨ أوامر معلومات ]**
+**[ $help-info ✨ أوامر معلومات ]**
 
-**[ -help-owner 🔒 أوامر صاحب البوت ]**
 	  `)
    message.channel.sendEmbed(embed)
     
