@@ -729,8 +729,40 @@ client.on("message", (message) => {
 });
 
 
+client.on("message", message => {
+
+ if (message.content === "$help") {
+
+  const embed = new Discord.RichEmbed()  
+
+      .setColor("#FABE16") 
+
+      		 .setFooter('DK BOT' , client.user.avatarURL)
+      .setDescription(`
+
+	      **Select one:**
+
+**[ -help-public ✨  أوامر عامة ]**
 
 
+**[ -help-admin 🙏 أوامر إدارية ]**
+			 
+
+**[ -help-games 🎮 أوامر الاألعاب ]**
+
+
+**[ -help-music 🔊 أوامر الموسيقى ]**
+
+
+**[ -help-info ✨ أوامر معلومات ]**
+
+
+**[ -help-owner 🔒 أوامر صاحب البوت ]**
+	  `)
+   message.channel.sendEmbed(embed)
+    
+   }
+   }); 
 
 
  client.on("guildMemberAdd", member => {
