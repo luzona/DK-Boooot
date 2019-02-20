@@ -729,6 +729,59 @@ client.on("message", (message) => {
 });
  
 
+
+
+
+    
+
+
+
+
+client.on("guildMemberAdd", member => {
+
+  member.createDM().then(function (channel) {
+
+  return channel.send(` 
+
+
+
+${member}  
+
+
+
+**مرحبا بك بالسيرفر | Welcome To Server
+
+
+
+Bot Name | اسم البوت : DK Bot 
+
+Servers | السيرفرات : ${client.guilds.size} 🌍
+
+Users | المستخدمين : ${client.users.size} 👥
+
+Bot Prefix | بريفكس البوت : [$]
+
+Help Command | امر المساعدة : $help
+
+Owner Bot | صاحب البوت : нℓ | LuZoNa#5083
+
+
+
+لآضافة البوت من هاذا الرابط | You Can Invite Bot From This Link
+
+**
+
+https://discordapp.com/oauth2/authorize?scope=bot&client_id=547131839945637888&permissions=70642768
+
+`) 
+
+}).catch(console.error)
+
+})
+
+
+
+
 client.on('ready', () => {
    console.log(`----------------`);
       console.log(`Desert Bot- Script By : LuZoNa`);
