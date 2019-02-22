@@ -1,7 +1,8 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 var prefix = "$";
-adminprefix = "!";
+const developers = ["469427192011423764"]
+const adminprefix = "-";
 client.on('message', message => { 
    if(!message.channel.guild) return;
 if(message.content.startsWith(prefix + 'bc')) {
