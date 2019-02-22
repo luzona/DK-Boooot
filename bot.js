@@ -437,6 +437,20 @@ client.on('message',async message => {
   });
   
   
+
+client.on('guildCreate', guild => {
+  client.channels.get("548460774096633867")
+const embed = new Discord.RichEmbed()
+   .setAuthor(`Joined New Server ✅`)
+   .setDescription(`
+Server name: __${guild.name}__
+Server owner: __${guild.owner}__`)
+         .setColor("#09fa2a")
+         .setFooter('DK BOT' , client.user.avatarURL)
+           client.channels.get("460066242070446080").send({embed});
+}
+
+);
   
 client.on('message', message => {
     var prefix = "$";
@@ -927,7 +941,7 @@ client.on("message", message => {
 
 **[ $help-info ✨ أوامر معلومات ]**
 
-**[ -help-owner 🔒 أوامر صاحب البوت ]**
+**[ $help-owner 🔒 أوامر صاحب البوت ]**
 	  `)
    message.channel.sendEmbed(embed)
     
@@ -982,8 +996,6 @@ client.on("message", message => {
 📍**$ban** = لتبنيد عضو | Ban MemBer
 📍**$mc** = لقفل الشات | Mute ChanneL
 📍**$umc** = لفتح الشات | UnMute ChanneL
-📍**$server** = لمعرفة معلومات السيرفر 
-
 
 `)
  message.author.sendEmbed(here)
