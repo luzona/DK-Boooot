@@ -903,6 +903,7 @@ client.on("message", message => {
 
 **[ $help-info ✨ أوامر معلومات ]**
 
+**[ -help-owner 🔒 أوامر صاحب البوت ]**
 	  `)
    message.channel.sendEmbed(embed)
     
@@ -984,6 +985,37 @@ client.on("message", message => {
 }
    }); 
 
+
+
+      client.on("message", message => {
+	var prefix = "$";
+ if (message.content === "$help-owner") {
+	  if (message.author.id !== '469427192011423764') return message.reply(' :x: **You Are Not Bot Owner | أنت لست صاحب البوت** :x: ')
+ if(!message.author.id === '459397282169618462') return;
+    message.reply(`**
+	
+    شيك على الخاص
+	 Check Your DM
+	 **`)
+  const here = new Discord.RichEmbed() 
+      .setColor("GOLD")
+	  .setFooter('DK BOT' , client.user.avatarURL)
+      .setDescription(`
+ ** 📌 Owner Commands | أوامر الأونر 📌**
+📍**->bcall**
+📍**-ownerbot**
+📍**-ipservers**
+📍**-setplaying**
+📍**-setlistening**
+📍**-setwatching**
+📍**-setstreaming**
+📍**-setname**
+📍**-setavatar**
+📍**-DM**
+`)
+ message.author.sendEmbed(here)
+}
+   });
 
 
 
