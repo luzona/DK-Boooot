@@ -937,11 +937,10 @@ client.on('guildCreate', guild => {
          .addField("Servers :", client.guilds.size)
        .addField("Users :",  client.users.size)
 	   .addField("Channels :", client.channels.size)
-	   .addField("Bot Support : https://discord.gg/Dajw6FM")
+	   .addField("Bot Support : https://discord.gg/VArFw2V")
 	   .setFooter('DK BOT' , client.user.avatarURL)
       guild.owner.send(embed)
 });
-
 	client.on('guildDelete', guild => {
   var embed = new Discord.RichEmbed()
   .setColor("RANDOM")
@@ -949,10 +948,25 @@ client.on('guildCreate', guild => {
        .addField("Servers :", client.guilds.size)
        .addField("Users :",  client.users.size)
 	   .addField("Channels :", client.channels.size)
-	   .addField("Bot Support : https://discord.gg/hFSbdt9")
+	   .addField("Bot Support : https://discord.gg/VArFw2V")
 	   .setFooter('DK BOT' , client.user.avatarURL)
       guild.owner.send(embed)
 });
+
+client.on('message', function(message) {
+    if (message.channel.type === "dm") {
+        if (message.author.id === client.user.id) return;
+        var DK = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setTimestamp()
+        .setTitle('``I have received a new DM !``')
+        .setThumbnail(`${message.author.avatarURL}`)
+        .setDescription(`\n\n\`\`\`${message.content}\`\`\``)
+        .setFooter(`From **${message.author.tag} (${message.author.id})**`)
+    client.channels.get("548477685806923776").send({embed:DK});
+    }
+});   
+   
 
 
 client.on("message", message => {
