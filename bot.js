@@ -676,6 +676,19 @@ if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return mess
 
 
 client.on('message', message => {
+  if (!message.content.startsWith(prefix)) return;
+  const verifed = ["4469427192011423764"];
+if (message.content.startsWith(prefix + 'ownerbot')) {
+    if(!message.channel.guild) return;
+if( verifed.some(word => message.author.id.includes(word)) ) {    return message.channel.sendMessage(`**You Are Bot Owner | انت صاحب البوت **` + `✅`)
+} else {
+   message.reply('**You Are Not Bot Owner | انت لسا صاحب البوت**' + '❌');   
+}
+}
+});
+
+
+client.on('message', message => {
     if (message.content === "$roles") {
         var roles = message.guild.roles.map(roles => `${roles.name}, `).join(' ')
         const embed = new Discord.RichEmbed()
