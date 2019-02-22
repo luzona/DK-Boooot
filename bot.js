@@ -106,7 +106,7 @@ message.channel.awaitMessages(filter, { max: 1, time: 15000, errors: ['time'] })
    const filte = m => m.content.startsWith("لا");
 message.channel.awaitMessages(filte, { max: 1, time: 15000, errors: ['time'] })
 .then(collected =>{ 
-   message.channel.send(`  **${message.author} تم رفض عرضك** `);
+   message.channel.send(`  **${message.author} تم رفض عرضك اعمل نفسك ميت** `);
 })
         
   }
