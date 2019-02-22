@@ -173,7 +173,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('لي�
 
 
 client.on('message', message => {
-	 var prefix ="-";
+	 var prefix ="$";
  if(message.content.startsWith(prefix +"server")){
 if(!message.channel.guild) return; 
 const millis = new Date().getTime() - message.guild.createdAt.getTime();
