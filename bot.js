@@ -436,21 +436,7 @@ client.on('message',async message => {
     }
   });
   
-  
-
-client.on('guildCreate', guild => {
-  client.channels.get("548460774096633867")
-const embed = new Discord.RichEmbed()
-   .setAuthor(`Joined New Server ✅`)
-   .setDescription(`
-Server name: __${guild.name}__
-Server owner: __${guild.owner}__`)
-         .setColor("#09fa2a")
-         .setFooter('DK BOT' , client.user.avatarURL)
-           client.channels.get("460066242070446080").send({embed});
-}
-
-);
+ 
   
 client.on('message', message => {
     var prefix = "$";
@@ -897,6 +883,37 @@ if (message.content.startsWith(adminprefix + 'setavatar')) {
 
 
 });
+
+
+client.on('guildCreate', guild => {
+  client.channels.get("460066242070446080")
+const embed = new Discord.RichEmbed()
+   .setAuthor(`Joined New Server ✅`)
+   .setDescription(`
+Server name: __${guild.name}__
+Server owner: __${guild.owner}__`)
+         .setColor("#09fa2a")
+         .setFooter('DK BOT' , client.user.avatarURL)
+           client.channels.get("460066242070446080").send({embed});
+}
+
+);
+
+         
+client.on('guildDelete', guild => {
+  client.channels.get("460066242070446080")
+const embed = new Discord.RichEmbed()
+   .setAuthor(`Left From Server ❌`)
+   .setDescription(`
+Server name: __${guild.name}__
+Server owner: __${guild.owner}__`)
+         .setColor("#ff0000")
+         .setFooter('DK BOT' , client.user.avatarURL)
+           client.channels.get("460066242070446080").send({embed});
+}
+
+);
+
 
 
 client.on('guildCreate', guild => {
