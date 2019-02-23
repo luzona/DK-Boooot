@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-var prefix = "$";
+var prefix = "-";
 const developers = ["469427192011423764"]
 const adminprefix = "-";
 client.on('message', message => { 
@@ -61,7 +61,7 @@ client.on ("guildMemberAdd", member => {
 
 
   client.on('message', message => {
-    if (message.content.startsWith("$Link")) {
+    if (message.content.startsWith("-Link")) {
 
   message.channel.createInvite({
         thing: true,
@@ -81,7 +81,7 @@ message.author.send(`**مدة الرابط : يـوم
 
 
 client.on('message', function(message) {
-    if (message.content == "$clear") {
+    if (message.content == "-clear") {
         if (message.member.hasPermission("MANAGE_MESSAGES")) {
             message.channel.fetchMessages()
                .then(function(list){
@@ -93,7 +93,7 @@ client.on('message', function(message) {
 });
 
   client.on('message', message => {
-      if(message.content.startsWith ("$marry")) {
+      if(message.content.startsWith ("-marry")) {
       if(!message.channel.guild) return message.reply('** This command only for servers **')
       var proposed = message.mentions.members.first()
      
@@ -122,7 +122,7 @@ message.channel.awaitMessages(filte, { max: 1, time: 15000, errors: ['time'] })
 });
 
 client.on('message',  (message) => {
-        if(message.content.startsWith('$kf')) {
+        if(message.content.startsWith('-kf')) {
   let user = message.mentions.users.first();
   if (!user) {
 
@@ -153,7 +153,7 @@ client.on('message',  (message) => {
 
 client.on('message', message => {
 
-    if (message.content === "$mc") {
+    if (message.content === "-mc") {
                         if(!message.channel.guild) return message.reply(' هذا الامر فقط للسيرفرات !!');
 
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' ليس لديك صلاحيات');
@@ -164,7 +164,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' لي
                message.reply("تم تقفيل الشات ? ")
            });
              }
-if (message.content === "$umc") {
+if (message.content === "-umc") {
     if(!message.channel.guild) return message.reply(' هذا الامر فقط للسيرفرات !!');
 
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('ليس لديك صلاحيات');
@@ -183,7 +183,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('لي�
 
 
 client.on('message', message => {
-    if (message.content.startsWith("$hacked")) {
+    if (message.content.startsWith("-hacked")) {
       if (message.author.bot) return
            message.delete();
              let args = message.content.split(' ').slice(1);
@@ -278,7 +278,7 @@ const Sra7a = [
 	 'صراحه  |  ما هي أمنياتك المُستقبلية؟‏',
 ]
    client.on('message', message => {
- if (message.content.startsWith('$صراحة')) {
+ if (message.content.startsWith('-صراحة')) {
      if(!message.channel.guild) return; 
   var client= new Discord.RichEmbed()
   .setTitle("لعبة صراحة ..")
@@ -348,7 +348,7 @@ client.on('message', message =>{
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
-    let prefix = '^';
+    let prefix = '-';
      
     if(cmd === `${prefix}report`){
         let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
@@ -378,7 +378,7 @@ client.on('message', message =>{
 
 client.on('message', message =>{
     let args = message.content.split(' ');
-    let prefix = '$'; 
+    let prefix = '-'; 
     
     if(args[0] === `${prefix}avatar`){
         let mentions = message.mentions.members.first()
@@ -401,7 +401,7 @@ client.on('message', message =>{
 });
 
 client.on('message', message => {
-    if (message.content.startsWith("$bans")) {
+    if (message.content.startsWith("-bans")) {
         message.guild.fetchBans()
         .then(bans => message.channel.send(`${bans.size} عدد اشخاص المبندة من السيرفر `))
   .catch(console.error);
@@ -409,7 +409,7 @@ client.on('message', message => {
 });
 
 client.on("message", (message) => {
-if (message.content.startsWith("$ct")) {
+if (message.content.startsWith("-ct")) {
             if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
         let args = message.content.split(" ").slice(1);
     message.guild.createChannel(args.join(' '), 'text');
@@ -418,7 +418,7 @@ message.channel.sendMessage('تـم إنـشاء روم كـتابـي')
 }
 });
 client.on("message", (message) => {
-if (message.content.startsWith("$cv")) {
+if (message.content.startsWith("-cv")) {
             if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
         let args = message.content.split(" ").slice(1);
     message.guild.createChannel(args.join(' '), 'voice');
@@ -449,7 +449,7 @@ client.on('message',async message => {
  
   
 client.on('message', message => {
-    var prefix = "$";
+    var prefix = "-";
 if(!message.channel.guild) return;
 if(message.content.startsWith(prefix + 'move')) {
  if (message.member.hasPermission("MOVE_MEMBERS")) {
@@ -511,7 +511,7 @@ message.channel.send(`**:white_check_mark: ${user.tag} banned from the server ! 
 
 
 client.on('message', message => {
-const prefix = "$";
+const prefix = "-";
   if (message.author.kick) return;
   if (!message.content.startsWith(prefix)) return;
 
@@ -669,7 +669,7 @@ if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return mess
 
 
   client.on('message', message => {
-    if (message.content === "$rooms") {
+    if (message.content === "-rooms") {
                       if (!message.guild) return;
 
         var channels = message.guild.channels.map(channels => `${channels.name}, `).join(' ')
@@ -689,7 +689,7 @@ client.on('message', message => {
   const verifed = ["469427192011423764"];
 if (message.content.startsWith(prefix + 'ownerbot')) {
     if(!message.channel.guild) return;
-if( verifed.some(word => message.author.id.includes(word)) ) {    return message.channel.sendMessage(`**You Are Bot Owner | اجا صاحب البوت وسعوا من هان **` + `✅`)
+if( verifed.some(word => message.author.id.includes(word)) ) {    return message.channel.sendMessage(`**You Are Bot Owner | انت صاحب البوت **` + `✅`)
 } else {
    message.reply('**You Are Not Bot Owner | انت لست صاحب البوت**' + '❌');   
 }
@@ -697,8 +697,22 @@ if( verifed.some(word => message.author.id.includes(word)) ) {    return message
 });
 
 
+             client.on('message', message => {
+                if(message.content === prefix + "inv") {
+                    let embed = new Discord.RichEmbed ()
+                    .setColor("RED")
+                    .setThumbnail(message.author.avatarURL)
+                    .setFooter("DK BOT", client.user.avatarURL)
+                	 embed.setTitle("**:arrow_right: Click To Invite DK BOT | اضغط هنا لاضافة البوت :arrow_left:**")
+                    .setURL("https://discordapp.com/oauth2/authorize?scope=bot&client_id=547131839945637888&permissions=70642768");
+                   message.channel.sendEmbed(embed);
+                  }
+});
+
+
+
 client.on('message', message => {
-    if (message.content === "$roles") {
+    if (message.content === "-roles") {
         var roles = message.guild.roles.map(roles => `${roles.name}, `).join(' ')
         const embed = new Discord.RichEmbed()
         .setColor('RANDOM')
@@ -707,7 +721,7 @@ client.on('message', message => {
     }
 });
 client.on('message' , message => {
-  var prefix = "$";
+  var prefix = "-";
   if(message.author.bot) return;
   if(message.content.startsWith(prefix + "ping")) {
  message.channel.send('Pong...').then((msg) => {
@@ -737,7 +751,7 @@ if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('
 
 
 client.on('message', message => {
-    const prefix = '$'
+    const prefix = '-'
 var args = message.content.split(" ").slice(1);    
 if(message.content.startsWith(prefix + 'id')) {
 var year = message.author.createdAt.getFullYear()
@@ -782,7 +796,7 @@ message.channel.send({embed});
 
 client.on("message", (message) => {
     /// ALPHA CODES
-   if (message.content.startsWith("$new")) {     /// ALPHA CODES
+   if (message.content.startsWith("-new")) {     /// ALPHA CODES
         const reason = message.content.split(" ").slice(1).join(" ");     /// ALPHA CODES
         if (!message.guild.roles.exists("name", "Support Team")) return message.channel.send(`لازم تسوي رتبة اسمها \`Support Team\` وتنطي البوت ادمنيتر حتا يقدر يسوي الرومات ويعدل برمشنات`);
         if (message.guild.channels.exists("name", "ticket-{message.author.id}" + message.author.id)) return message.channel.send(`You already have a ticket open.`); 
@@ -813,7 +827,7 @@ client.on("message", (message) => {
     }
  
  
-  if (message.content.startsWith("$close")) {
+  if (message.content.startsWith("-close")) {
         if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(`You can't use the close command outside of a ticket channel.`);
  
        message.channel.send(`هل انت متأكد من اقفالك للتذكرة اذا متأكد اكتب $close`)
@@ -839,7 +853,7 @@ client.on("message", (message) => {
 
 client.on('ready', () => {
    console.log(`----------------`);
-      console.log(`Desert Bot- Script By : EX Clan`);
+      console.log(`Desert Bot- Script By : DK Clan`);
         console.log(`----------------`);
       console.log(`ON ${client.guilds.size} Servers '     Script By : LuZoNa ' `);
     console.log(`----------------`);
@@ -987,15 +1001,15 @@ client.on("message", message => {
 	  
 	      **Select One:**
 			 
-**[ $help-public ✨  أوامر عامة ]**
+**[ -help-public ✨  أوامر عامة ]**
 
-**[ $help-admin 🙏 أوامر إدارية ]**
+**[ -help-admin 🙏 أوامر إدارية ]**
 			 
-**[ $help-games 🎮 أوامر الاألعاب ]**
+**[ -help-games 🎮 أوامر الاألعاب ]**
 
-**[ $help-info ✨ أوامر معلومات ]**
+**[ -help-info ✨ أوامر معلومات ]**
 
-**[ $help-owner 🔒 أوامر صاحب البوت ]**
+**[ -help-owner 🔒 أوامر صاحب البوت ]**
 	  `)
    message.channel.sendEmbed(embed)
     
@@ -1003,8 +1017,8 @@ client.on("message", message => {
    });
  
 client.on("message", message => {
-	var prefix = "$";
- if (message.content === "$help-public") {
+	var prefix = "-";
+ if (message.content === "-help-public") {
     message.reply(`**
 	
     شيك على الخاص
@@ -1030,8 +1044,8 @@ client.on("message", message => {
 
 
    client.on("message", message => {
-	var prefix = "$";
- if (message.content === "$help-admin") {
+	var prefix = "-";
+ if (message.content === "-help-admin") {
     message.reply(`**
 	
     شيك على الخاص
@@ -1057,8 +1071,8 @@ client.on("message", message => {
    }); 
 
       client.on("message", message => {
-	var prefix = "$";
- if (message.content === "$help-games") {
+	var prefix = "-";
+ if (message.content === "-help-games") {
     message.reply(`**
 	
     شيك على الخاص
@@ -1078,8 +1092,8 @@ client.on("message", message => {
 
 
       client.on("message", message => {
-	var prefix = "$";
- if (message.content === "$help-owner") {
+	var prefix = "-";
+ if (message.content === "-help-owner") {
 	  if (message.author.id !== '469427192011423764') return message.reply(' :x: **You Are Not Bot Owner | أنت لست صاحب البوت** :x: ')
  if(!message.author.id === '459397282169618462') return;
     message.reply(`**
@@ -1110,8 +1124,8 @@ client.on("message", message => {
 
 
       client.on("message", message => {
-	var prefix = "$";
- if (message.content === "$help-info") {
+	var prefix = "-";
+ if (message.content === "-help-info") {
     message.reply(`**
 	
     شيك على الخاص
