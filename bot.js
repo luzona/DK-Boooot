@@ -1007,7 +1007,7 @@ client.on('message', function(message) {
 
 
 client.on("message", message => {
- if (message.content === "$help") {
+ if (message.content === "-help") {
   const embed = new Discord.RichEmbed()  
       .setColor("#FABE16") 
       		 .setFooter('DK BOT' , client.user.avatarURL)
