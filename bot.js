@@ -990,6 +990,25 @@ client.on('guildCreate', guild => {
       guild.owner.send(embed)
 });
 
+client.on("message", function(message) {
+let messageArray = message.content.split(" ");
+let command = messageArray[0];
+let anarg = message.content.split(' ').slice(1).join(' ')
+         var currentTime = new Date(),
+          hours = currentTime.getHours() + 2 ,
+          minutes = currentTime.getMinutes(),
+          seconds = currentTime.getSeconds(),
+          Year = currentTime.getFullYear() - 2000,
+          Month = currentTime.getMonth() + 1,
+          Day = currentTime.getDate();
+          var suffix = 'AM';
+          if (hours >= 12) {
+             suffix = 'PM';
+              hours = hours - 12;
+         }
+          if (hours == 0) {
+              hours = 12;
+          }
 let DM = new Discord.RichEmbed()
     .setColor("ORANGE")
     .addField("**•DM Messages**","**"+anarg+"**")
