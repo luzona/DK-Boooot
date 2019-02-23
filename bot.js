@@ -51,6 +51,15 @@ msg.delete();
 }
 });
 
+
+client.on ("guildMemberAdd", member => {
+
+   var role = member.guild.roles.find ("name", "Member");
+   member.addRole (role);
+  
+})
+
+
   client.on('message', message => {
     if (message.content.startsWith("$Link")) {
 
