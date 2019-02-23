@@ -703,7 +703,7 @@ if( verifed.some(word => message.author.id.includes(word)) ) {    return message
                     .setColor("RED")
                     .setThumbnail(message.author.avatarURL)
                     .setFooter("DK BOT", client.user.avatarURL)
-                	 embed.setTitle("**:arrow_right: Click To Invite DK BOT | اضغط هنا لاضافة البوت :arrow_left:**")
+                	 embed.setTitle("**:arrow_right: Click To Invite DK BOT | تويلا ةفاضال انه طغضا :arrow_left:**")
                     .setURL("https://discordapp.com/oauth2/authorize?scope=bot&client_id=547131839945637888&permissions=70642768");
                    message.channel.sendEmbed(embed);
                   }
