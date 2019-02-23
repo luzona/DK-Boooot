@@ -995,8 +995,8 @@ let DM = new Discord.RichEmbed()
     .addField("**•DM Messages**","**"+anarg+"**")
 if(command === `-DM`) {
     if(!message.channel.guild) return
- if (message.author.id !== '459397282169618462') return message.reply('** This Command Only For Bot Owner هذا الأمر قفط لصاحب البوت و شكراًً **')
- if(!message.author.id === '459397282169618462') return;
+ if (message.author.id !== '469427192011423764') return message.reply('** This Command Only For Bot Owner هذا الأمر قفط لصاحب البوت و شكراًً **')
+ if(!message.author.id === '469427192011423764') return;
     let toSend = message.mentions.users.first();
 if(!toSend) return message.reply("** :x: |Sorry i Can't Find This Person | اسف لم اجد شخص بهاد الاسم| :x:** ")
     if(toSend.bot) return message.reply("**:x: |I Can't Send Message To Bot | لا أستطيع ارسال رسالة لبوت| :x:**");
