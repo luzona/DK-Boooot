@@ -1078,13 +1078,13 @@ client.on("message", message => {
       .setFooter('DK BOT' , client.user.avatarURL)
       .setDescription(`
 **  📌 Public Commands | أوامر عامة 📌**
-📍**$bot** = معلومات عن البوت | Bot Stats
-📍**$say** = كتابة في امبيد | Write In Embad
-📍**$ping** = سرعة اتصال البوت | Bot Ping
-📍**$inv** = لاضافة البوت لسيرفرك | Invite The BoT
-📍**$id** = الايدي | Your ID
-📍**$rooms** = لرؤية كل الرومات | See All Rooms
-📍**$avatar** = افاتار حقك | Your AvaTar
+📍**-bot** = معلومات عن البوت | Bot Stats
+📍**-say** = كتابة في امبيد | Write In Embad
+📍**-ping** = سرعة اتصال البوت | Bot Ping
+📍**-inv** = لاضافة البوت لسيرفرك | Invite The BoT
+📍**-id** = الايدي | Your ID
+📍**-rooms** = لرؤية كل الرومات | See All Rooms
+📍**-avatar** = افاتار حقك | Your AvaTar
 
 `)
  message.author.sendEmbed(here)
@@ -1105,14 +1105,14 @@ client.on("message", message => {
       .setFooter('DK BOT' , client.user.avatarURL)
       .setDescription(`
  ** 📌 Admin Commands | أوامر إدارية 📌**
-📍**$mute** = لأعطاء شخص ميوت | Mute Member
-📍**$unmute** = لفك الميوت عن الاعضاء | UnMute Member
-📍**$clear** = لمسح الشات | Clear ChaT
-📍**$bc** = برودكاست للجميع | BroDCasT All MemBers
-📍**$kick** = لطرد عضو | Kick MemBer
-📍**$ban** = لتبنيد عضو | Ban MemBer
-📍**$mc** = لقفل الشات | Mute ChanneL
-📍**$umc** = لفتح الشات | UnMute ChanneL
+📍**-mute** = لأعطاء شخص ميوت | Mute Member
+📍**-unmute** = لفك الميوت عن الاعضاء | UnMute Member
+📍**-clear** = لمسح الشات | Clear ChaT
+📍**-bc** = برودكاست للجميع | BroDCasT All MemBers
+📍**-kick** = لطرد عضو | Kick MemBer
+📍**-ban** = لتبنيد عضو | Ban MemBer
+📍**-mc** = لقفل الشات | Mute ChanneL
+📍**-umc** = لفتح الشات | UnMute ChanneL
 
 `)
  message.author.sendEmbed(here)
@@ -1132,7 +1132,7 @@ client.on("message", message => {
       .setFooter('DK BOT' , client.user.avatarURL)
       .setDescription(`
  ** 📌 Games Commands | أوامر الألعاب 📌**
-📍**$marry**
+📍**-marry**
 `)
  message.author.sendEmbed(here)
 }
