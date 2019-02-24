@@ -1132,6 +1132,8 @@ if(!toSend) return message.reply("** :x: |Sorry i Can't Find This Person | اس�
  }
 });
 
+
+
 const credits = JSON.parse(fs.readFileSync("./creditsCode.json", "utf8"));
 const coolDown = new Set();
 
@@ -1182,6 +1184,9 @@ client.on('message', async message => {
     },86400000);
     }
 });
+
+
+
 
 client.on('message', function(message) {
     if (message.channel.type === "dm") {
