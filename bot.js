@@ -698,6 +698,8 @@ if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return mess
 });
 
 
+
+
 client.on('message', message => {
 	 var prefix ="-";
  if(message.content.startsWith(prefix +"server")){
@@ -722,6 +724,10 @@ message.channel.sendEmbed(embed)
 
 }
 });
+
+
+
+
 
 client.on('message', message => {
   if (!message.content.startsWith(prefix)) return;
