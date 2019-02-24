@@ -888,8 +888,8 @@ ${member}
 Bot Name | اسم البوت : @👑ِ𝓓𝓚👑#0511 
 Servers | السيرفرات : ${client.guilds.size} 🌍
 Users | المستخدمين : ${client.users.size} 👥
-Bot Prefix | بريفكس البوت : [$]
-Help Command | امر المساعدة : $help
+Bot Prefix | بريفكس البوت : [-]
+Help Command | امر المساعدة : -help
 Owner Bot | صاحب البوت : 👑ِ𝓓𝓚👑LuZoNa#5083 
 
 لآضافة البوت من هاذا الرابط | You Can Invite Bot From This Link
