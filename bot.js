@@ -955,7 +955,6 @@ let welcomer = member.guild.channels.find("name","welcome");
       }
 	
 	
-	
 client.on('guildCreate', guild => {
   client.channels.get("548460774096633867")
 const embed = new Discord.RichEmbed()
