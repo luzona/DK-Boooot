@@ -1253,6 +1253,4 @@ Members must use this command **-sug**
 }
    }); 
 
-
-
 client.login(process.env.BOT_TOKEN);
