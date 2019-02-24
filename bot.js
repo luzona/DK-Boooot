@@ -1028,6 +1028,7 @@ if (message.content.startsWith(adminprefix + 'setavatar')) {
 });
 
 
+
 client.on('guildCreate', guild => {
   client.channels.get("548460774096633867")
 const embed = new Discord.RichEmbed()
