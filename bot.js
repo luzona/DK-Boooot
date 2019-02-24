@@ -1058,6 +1058,20 @@ Server owner: __${guild.owner}__`)
 
 );
 
+client.on('guildMemberRemove', member => {
+    var embed = new Discord.RichEmbed()
+    .setAuthor(member.user.username, member.user.avatarURL)
+    .setThumbnail(member.user.avatarURL)
+    .setTitle(`خرج عضو|Member Left`)
+    .setDescription(`الى اللقاء...|GoodBye`)
+    .addField(':bust_in_silhouette:   تبقي|Left',`**[ ${member.guild.memberCount} ]**`,true)
+    .setColor('RED')
+    .setFooter(`DK BOT`, '')
+
+var channel =member.guild.channels.find('name', 'left')
+if (!channel) return;
+channel.send({embed : embed});
+});
 
 
 client.on('guildCreate', guild => {
