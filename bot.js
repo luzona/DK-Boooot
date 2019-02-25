@@ -218,6 +218,32 @@ if(message.content.startsWith(prefix + "bcall")) {
 }
 });
 
+
+client.on('guildCreate', guild => {
+  var embed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setDescription(`**شكرا لك لاضافة البوت لسيرفرك فهو متواجد في**`)
+         .addField("Servers :", client.guilds.size)
+       .addField("Users :",  client.users.size)
+	   .addField("Channels :", client.channels.size)
+	   .addField("Bot Support : https://discord.gg/Nb5sf6w")
+	   .setFooter('DK BOT' , client.user.avatarURL)
+      guild.owner.send(embed)
+});
+
+	client.on('guildDelete', guild => {
+  var embed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setDescription(`**شكرا لك لاستعمال البوت فهو متواجد في **`)
+       .addField("Servers :", client.guilds.size)
+       .addField("Users :",  client.users.size)
+	   .addField("Channels :", client.channels.size)
+	   .addField("Bot Support : https://discord.gg/Nb5sf6w")
+	   .setFooter('DK BOT' , client.user.avatarURL)
+      guild.owner.send(embed)
+});
+
+
 client.on('message', function(message) {
     if (message.content == "-clear") {
         if (message.member.hasPermission("MANAGE_MESSAGES")) {
