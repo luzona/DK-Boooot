@@ -114,7 +114,7 @@ message.author.send(`**مدة الرابط : يـوم
 
 
 client.on('message', function(message) {
-    if (message.content == "#clear") {
+    if (message.content == "-clear") {
         if (message.member.hasPermission("MANAGE_MESSAGES")) {
             message.channel.fetchMessages()
                .then(function(list){
@@ -155,7 +155,7 @@ message.channel.awaitMessages(filte, { max: 1, time: 15000, errors: ['time'] })
 });
 
 client.on('message',  (message) => {
-        if(message.content.startsWith('$kf')) {
+        if(message.content.startsWith('-kf')) {
   let user = message.mentions.users.first();
   if (!user) {
 
@@ -182,6 +182,33 @@ client.on('message',  (message) => {
   })
         }  
 });
+
+
+
+client.on('guildCreate', guild => {
+  var embed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setDescription(`**شكرا لك لاضافة البوت لسيرفرك فهو متواجد في**`)
+         .addField("Servers :", client.guilds.size)
+       .addField("Users :",  client.users.size)
+	   .addField("Channels :", client.channels.size)
+	   .addField("Bot Support : https://discord.gg/Dajw6FM")
+	   .setFooter('DK BOT' , client.user.avatarURL)
+      guild.owner.send(embed)
+});
+
+	client.on('guildDelete', guild => {
+  var embed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setDescription(`**شكرا لك لاستعمال البوت فهو متواجد في **`)
+       .addField("Servers :", client.guilds.size)
+       .addField("Users :",  client.users.size)
+	   .addField("Channels :", client.channels.size)
+	   .addField("Bot Support : https://discord.gg/Dajw6FM")
+	   .setFooter('DK BOT' , client.user.avatarURL)
+      guild.owner.send(embed)
+});
+
 
 
 client.on('message', message => {
@@ -213,7 +240,23 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('لي�
 
 });
 
- 
+
+
+ client.on('message', function(message) {
+    if (message.channel.type === "dm") {
+        if (message.author.id === client.user.id) return;
+        var DK = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setTimestamp()
+        .setTitle('``I have received a new DM !``')
+        .setThumbnail(`${message.author.avatarURL}`)
+        .setDescription(`\n\n\`\`\`${message.content}\`\`\``)
+        .setFooter(`From **${message.author.tag} (${message.author.id})**`)
+    client.channels.get("548477685806923776").send({embed:DK});
+    }
+});   
+
+
   client.on('message', async message => {
   if(message.content.startsWith(prefix + "apply")) {
     await message.channel.send("**الاسم**").then(e => {
@@ -751,45 +794,221 @@ client.user.setStatus("dnd")
 });
  
  
- 
-client.on('message' , message => {
-if(message.content === '$help') {
-  var EsTeKnAN = new Discord.RichEmbed()
-  .setColor('RANDOM')
-message.author.send(`
-***__وصف عن البوت__***
-**
-─════════════ {✯اوامر البوت✯} ════════════─
-❧ $bc ➺ برودكاست ب امبيد وبدون
-❧ -Link ➺ رابط انفايت للسيرفر
-❧ -clear ➺ مسح الشات
-❧ -server ➺ لعرض معلومات السيرفر
-❧ -marry ➺ لعبة الزواج
-❧ -kf ➺ لعبة كف
-❧ -mc ➺ قفل الشات
-❧ -umc ➺ فتح الشات
-❧ -hacked ➺ لعبة التهكير
-❧ -apply ➺ تقديم / لازم في روم اسمه التقديمات
-❧ -report ➺ تبليغ / لازم في روم اسمه repoerts
-❧ -avatar ➺ عرض صورتك او شخص تمنشنه
-❧ -bans ➺ يقولك عدد الاشخاص المبندين من السيرفر
-❧ -ct ➺ انشاء روم كتابي
-❧ -cv ➺ انشاء روم صوتي
-❧ -setVoice ➺ يسويلك روم ويقولك عدد الاشخاص في الرومات الصوتية
-❧ -move ➺ سحب عضو للروم الصوتي
-❧ -ban ➺ تبنيد عضو من السيرفر
-❧ -kick ➺ طرد عضو من السيرفر
-❧ -mute ➺ اعطاء ميوت كتابي
-❧ -unmute ➺ فك الميوت الكتابي
-❧ -rooms ➺ لعرض الرومات الموجودة في السيرفر
-❧ -roles ➺ لعرض الرتب الموجودة في السيرفر
-❧ -say ➺ البوت يكرر كلام انته تحدده
-❧ -id ➺ لعرض معلوماتك
-❧ -new ➺ لانشاء تذكرة
-─════════════ {✯ By ! ' 👑ِDK👑ِ-LuZoNa#5083 ✯} ════════════─
-**
-`);
+
+
+client.on("message", message => {
+ if (message.content === "-help") {
+  const embed = new Discord.RichEmbed()  
+      .setColor("#FABE16") 
+      		 .setFooter('DK BOT' , client.user.avatarURL)
+      .setDescription(`
+	  
+	      **Select One:**
+			 
+**[ -help-public ✨  أوامر عامة ]**
+
+**[ -help-admin 🙏 أوامر إدارية ]**
+			 
+**[ -help-games 🎮 أوامر الاألعاب ]**
+
+**[ -help-music 🔊 أوامر الموسيقى ]**
+
+**[ -help-info ✨ أوامر معلومات ]**
+
+**[ -help-owner 🔒 أوامر صاحب البوت ]**
+	  `)
+   message.channel.sendEmbed(embed)
+    
+   }
+   }); 
+
+
+client.on("message", message => {
+	var prefix = "-";
+ if (message.content === "-help-public") {
+    message.reply(`**
+	
+    شيك على الخاص
+	 Check Your DM
+	 **`)
+  const here = new Discord.RichEmbed() 
+      .setColor("GOLD")
+      .setFooter('DK BOT' , client.user.avatarURL)
+      .setDescription(`
+**  📌 Public Commands | أوامر عامة 📌**
+📍**-quran** = فتح المصحف | Open Quran
+📍**-bot** = معلومات عن البوت | Bot Stats
+📍**-mb** = معرفة حالة الاعضاء | Members Stats
+📍**-say** = كتابة في امبيد | Write In Embad
+📍**-ping** = سرعة اتصال البوت | Bot Ping
+📍**-inv** = لاضافة البوت لسيرفرك | Invite The BoT
+📍**-mcskin** = سكنات ماينكرافت | Minecraft Skins
+📍**-id** = الايدي | Your ID
+📍**-perms** = لرؤية صلاحياتك | Your Permissions
+📍**-rooms** = لرؤية كل الرومات | See All Rooms
+📍**-server** = معلومات عن السيرفر | Server Info
+📍**-count **= معرفة عدد اعضاء السيرفر | MemBers Count
+📍**-sug **= للاقتراح | Suggestion
+📍**-avatar** = افاتار حقك | Your AvaTar
+📍**-tag** = كلام بس بشكل حلو  | Write Words But BeTTer
+📍**-afk** = ادا تبي تافك  | For AFK
+📍**-back** = ادا رجعت  | For Longer AFK
+
+`)
+ message.author.sendEmbed(here)
 }
-})
+   }); 
+
+
+   client.on("message", message => {
+	var prefix = "-";
+ if (message.content === "-help-admin") {
+    message.reply(`**
+	
+    شيك على الخاص
+	 Check Your DM
+	 **`)
+  const here = new Discord.RichEmbed() 
+      .setColor("GOLD")
+      .setFooter('DK BOT' , client.user.avatarURL)
+      .setDescription(`
+ ** 📌 Admin Commands | أوامر إدارية 📌**
+📍**-mute** = لأعطاء شخص ميوت | Mute Member
+📍**-clear** = لمسح الشات | Clear ChaT
+📍**-bc** = برودكاست للجميع | BroDCasT All MemBers
+📍**-kick** = لطرد عضو | Kick MemBer
+📍**-ban** = لتبنيد عضو | Ban MemBer
+📍**-mc** = لقفل الشات | Mute ChanneL
+📍**-umc** = لفتح الشات | UnMute ChanneL
+
+
+`)
+ message.author.sendEmbed(here)
+}
+   }); 
+   
+   
+
+      client.on("message", message => {
+	var prefix = "-";
+ if (message.content === "-help-games") {
+    message.reply(`**
+	
+    شيك على الخاص
+	 Check Your DM
+	 **`)
+  const here = new Discord.RichEmbed() 
+      .setColor("GOLD")
+      .setFooter('DK BOT' , client.user.avatarURL)
+      .setDescription(`
+ ** 📌 Games Commands | أوامر الألعاب 📌**
+📍**-marry**
+`)
+ message.author.sendEmbed(here)
+}
+   }); 
+
+
+      client.on("message", message => {
+	var prefix = "-";
+ if (message.content === "-help-owner") {
+	  if (message.author.id !== '459397282169618462') return message.reply(' :x: **You Are Not Bot Owner | أنت لست صاحب البوت** :x: ')
+ if(!message.author.id === '459397282169618462') return;
+    message.reply(`**
+	
+    شيك على الخاص
+	 Check Your DM
+	 **`)
+  const here = new Discord.RichEmbed() 
+      .setColor("GOLD")
+	  .setFooter('DK BOT' , client.user.avatarURL)
+      .setDescription(`
+ ** 📌 Owner Commands | أوامر الأونر 📌**
+📍**->bcall**
+📍**-ownerbot**
+📍**-ipservers**
+📍**-setplaying**
+📍**-setlistening**
+📍**-setwatching**
+📍**-setstreaming**
+📍**-setname**
+📍**-setavatar**
+📍**-DM**
+`)
+ message.author.sendEmbed(here)
+}
+   }); 
+
+
+
+
+      client.on("message", message => {
+	var prefix = "-";
+ if (message.content === "-help-info") {
+    message.reply(`**
+	
+    شيك على الخاص
+	 Check Your DM
+	 **`)
+  const here = new Discord.RichEmbed() 
+      .setColor("GOLD")
+	  .setFooter('DK BOT' , client.user.avatarURL)
+      .setDescription(`
+ ** 📌 Info Commands | معلومات عامة 📌**
+📍 **باللغة العربية :**
+
+انشئ روم بأسم **welcome**
+ليرحب البوت بكل واحد يدخل السيرفر
+
+انشئ روم بأسم **left**
+ليودع البوت كل واحد يغادر السيرفر
+
+انشئ روم بأسم **suggestions**
+سيكون الروم مخصص للاقتراحات 
+لحتى يتمكنوا الاعضاء من الاقتراح
+يجب استخدام هذا الامر **-sug**
+
+
+📍 **English Language :**
+
+Create a **welcome ** Room
+To welcome the bot every one enters the server
+
+Create a **left** Room
+To put out the bot each one leaves the server
+
+Create a **suggestions** Room
+The room will be for suggestions
+Even members can Suggest
+Members must use this command **-sug**
+`)
+ message.author.sendEmbed(here)
+}
+   }); 
+
+
+
+      client.on('message', message => {
+    if (message.content.startsWith("-afk")) {
+if(!message.channel.guild) return;
+if(!message.guild.member(client.user).hasPermission("MANAGE_NICKNAMES")) return message.reply("i Don't Have Permission ``MANAGE_NICKNAMES`` :x: ")
+      if(message.highestRole >= message.guild.member(client.user).highestRole.positon) return message.reply('**Your Rank HIGH OF My Rank**')
+    if(!message.guild.owner) return message.reply("You Are Server Owner");
+   message.member.setNickname('[AFK]-'+message.author.username)
+      message.reply("**You Are Now AFK... **")
+   
+    }});
+    
+       client.on('message', message => {
+    if (message.content.startsWith("-back")) {
+if(!message.channel.guild) return;
+if(!message.guild.member(client.user).hasPermission("MANAGE_NICKNAMES")) return message.reply("i Don't Have Permission ``MANAGE_NICKNAMES`` :x: ")
+   if(!message.guild.owner) return message.reply("You Are Server Owner");
+   message.member.setNickname('')
+   message.reply("**You Longer AFK... Welcome Back**")
+   
+    }});
+
+
  
 client.login(process.env.BOT_TOKEN);
