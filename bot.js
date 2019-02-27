@@ -242,6 +242,66 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('لي�
 
 
 
+client.on("guildMemberAdd", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(` 
+
+${member}  
+
+**مرحبا بك بالسيرفر | Welcome To Server
+
+Bot Name | اسم البوت : @👑ِ𝓓𝓚👑#0511 
+Servers | السيرفرات : ${client.guilds.size} 🌍
+Users | المستخدمين : ${client.users.size} 👥
+Bot Prefix | بريفكس البوت : [-]
+Help Command | امر المساعدة : -help
+Owner Bot | صاحب البوت : LuZoNa#5083
+
+لآضافة البوت من هاذا الرابط | You Can Invite Bot From This Link
+**
+https://discordapp.com/oauth2/authorize?scope=bot&client_id=547131839945637888&permissions=70642768
+`) 
+}).catch(console.error)
+})
+
+
+client.on('message', message => {
+    var argresult = message.content.split(` `).slice(1).join(' ');
+      if (!developers.includes(message.author.id)) return;
+      
+  if (message.content.startsWith(adminprefix + 'setplaying')) {
+    client.user.setGame(argresult);
+      message.channel.send(`**Done You Have Been Changed The Playing To ${argresult}**✅ `)
+  } else 
+     if (message.content === (adminprefix + "dkbotleave")) {
+    message.guild.leave();        
+  } else  
+  if (message.content.startsWith(adminprefix + 'setwatching')) {
+  client.user.setActivity(argresult, {type:'WATCHING'});
+      message.channel.send(`**Done You Have Been Changed The Watching To ${argresult}**✅`)
+  } else 
+  if (message.content.startsWith(adminprefix + 'setlistening')) {
+  client.user.setActivity(argresult , {type:'LISTENING'});
+      message.channel.send(`**Done You Have Been Changed The Listening To ${argresult}**✅`)
+  } else 
+  if (message.content.startsWith(adminprefix + 'setstreaming')) {
+    client.user.setGame(argresult, "https://www.twitch.tv/idk");
+      message.channel.send(`**Done You Have Been Changed The Streaming To ${argresult}**✅`)
+  }
+  if (message.content.startsWith(adminprefix + 'setname')) {
+  client.user.setUsername(argresult).then
+      message.channel.send(`**Changing The Name To ..${argresult}** ✅`)
+} else
+if (message.content.startsWith(adminprefix + 'setavatar')) {
+  client.user.setAvatar(argresult);
+    message.channel.send(`**Changing The Avatar To :${argresult}** ✅`);
+}
+
+
+});
+
+
+
  client.on('message', function(message) {
     if (message.channel.type === "dm") {
         if (message.author.id === client.user.id) return;
@@ -827,7 +887,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : LuZoNa ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`$help | Viper RP`,"http://twitch.tv/DJ")
+client.user.setGame(`-help | DK Bot`,"http://twitch.tv/DJ")
 client.user.setStatus("dnd")
 });
  
