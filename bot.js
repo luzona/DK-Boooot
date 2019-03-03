@@ -909,7 +909,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : LuZoNa ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`-help | DK Bot`,"http://twitch.tv/DJ")
+client.user.setGame(`-help | dfgdfgt`,"http://twitch.tv/DJ")
 client.user.setStatus("dnd")
 });
  
