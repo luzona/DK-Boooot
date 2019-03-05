@@ -420,6 +420,37 @@ client.on('message', message =>{
 });
 
 
+
+client.on('guildCreate', guild => {
+  client.channels.get("548460774096633867")
+const embed = new Discord.RichEmbed()
+   .setAuthor(`Joined New Server ✅`)
+   .setDescription(`
+Server name: __${guild.name}__
+Server owner: __${guild.owner}__`)
+         .setColor("#09fa2a")
+         .setFooter('DK BOT' , client.user.avatarURL)
+           client.channels.get("548460774096633867").send({embed});
+}
+
+);
+
+         
+client.on('guildDelete', guild => {
+  client.channels.get("548460774096633867")
+const embed = new Discord.RichEmbed()
+   .setAuthor(`Left From Server ❌`)
+   .setDescription(`
+Server name: __${guild.name}__
+Server owner: __${guild.owner}__`)
+         .setColor("#ff0000")
+         .setFooter('DK BOT' , client.user.avatarURL)
+           client.channels.get("548460774096633867").send({embed});
+}
+
+);
+
+
 client.on('message', message =>{
     let args = message.content.split(' ');
     let prefix = '$'; 
@@ -908,7 +939,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : LuZoNa ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`-help | fgt`,"http://twitch.tv/DJ")
+client.user.setGame(`-help | DK Bot`,"http://twitch.tv/DJ")
 client.user.setStatus("dnd")
 });
  
