@@ -303,7 +303,7 @@ if (message.content.startsWith(adminprefix + 'setavatar')) {
 client.on('message', async message => {
 if(message.content.startsWith(prefix + "bcall")) {
   let i = client.users.size;
-  if(message.author.id !== 'الأيدي حقك') return message.channel.send('❎ » هذا الأمر مخصص لصاحب البوت فقط');
+  if(message.author.id !== '469427192011423764') return message.channel.send('❎ » هذا الأمر مخصص لصاحب البوت فقط');
   var args = message.content.split(' ').slice(1).join(' ');
   if(!args) return message.channel.send('❎ » يجب عليك كتابة الرسالة')
   setTimeout(() => {
@@ -1009,7 +1009,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : LuZoNa ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`-help | DK Bot`,"http://twitch.tv/DJ")
+client.user.setGame(`-Help | 4K Bot`,"http://twitch.tv/DJ")
 client.user.setStatus("dnd")
 });
  
