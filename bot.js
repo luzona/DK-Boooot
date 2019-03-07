@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 var prefix = "-";
-const developers = ["469427192011423764,304448589374160896"]
+const developers = ["469427192011423764"]
 const adminprefix = "-";
 client.on('message', message => {
     if (message.content.startsWith("-bc")) {
