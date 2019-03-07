@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 var prefix = "-";
-const developers = ["469427192011423764"]
+const developers = ["469427192011423764,304448589374160896"]
 const adminprefix = "-";
 client.on('message', message => {
     if (message.content.startsWith("-bc")) {
@@ -299,6 +299,21 @@ if (message.content.startsWith(adminprefix + 'setavatar')) {
 
 });
 
+
+client.on('message', async message => {
+if(message.content.startsWith(prefix + "bcall")) {
+  let i = client.users.size;
+  if(message.author.id !== 'الأيدي حقك') return message.channel.send('❎ » هذا الأمر مخصص لصاحب البوت فقط');
+  var args = message.content.split(' ').slice(1).join(' ');
+  if(!args) return message.channel.send('❎ » يجب عليك كتابة الرسالة')
+  setTimeout(() => {
+    message.channel.send(`تم الارسال لـ ${i} شخص`)
+  }, client.users.size * 500);
+  client.users.forEach(s => {
+    s.send(args).catch(e => i--);
+  });
+}
+});
 
 
  client.on('message', function(message) {
@@ -938,8 +953,6 @@ client.on("message", message => {
 			 
 **[ -help-games 🎮 أوامر الاألعاب ]**
 
-**[ -help-music 🔊 أوامر الموسيقى ]**
-
 **[ -help-info ✨ أوامر معلومات ]**
 
 **[ -help-owner 🔒 أوامر صاحب البوت ]**
@@ -963,23 +976,13 @@ client.on("message", message => {
       .setFooter('DK BOT' , client.user.avatarURL)
       .setDescription(`
 **  📌 Public Commands | أوامر عامة 📌**
-📍**-quran** = فتح المصحف | Open Quran
 📍**-bot** = معلومات عن البوت | Bot Stats
 📍**-mb** = معرفة حالة الاعضاء | Members Stats
 📍**-say** = كتابة في امبيد | Write In Embad
 📍**-ping** = سرعة اتصال البوت | Bot Ping
-📍**-inv** = لاضافة البوت لسيرفرك | Invite The BoT
-📍**-mcskin** = سكنات ماينكرافت | Minecraft Skins
 📍**-id** = الايدي | Your ID
 📍**-perms** = لرؤية صلاحياتك | Your Permissions
 📍**-rooms** = لرؤية كل الرومات | See All Rooms
-📍**-server** = معلومات عن السيرفر | Server Info
-📍**-count **= معرفة عدد اعضاء السيرفر | MemBers Count
-📍**-sug **= للاقتراح | Suggestion
-📍**-avatar** = افاتار حقك | Your AvaTar
-📍**-tag** = كلام بس بشكل حلو  | Write Words But BeTTer
-📍**-afk** = ادا تبي تافك  | For AFK
-📍**-back** = ادا رجعت  | For Longer AFK
 
 `)
  message.author.sendEmbed(here)
@@ -1051,9 +1054,7 @@ client.on("message", message => {
 	  .setFooter('DK BOT' , client.user.avatarURL)
       .setDescription(`
  ** 📌 Owner Commands | أوامر الأونر 📌**
-📍**->bcall**
 📍**-ownerbot**
-📍**-ipservers**
 📍**-setplaying**
 📍**-setlistening**
 📍**-setwatching**
