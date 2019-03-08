@@ -1,9 +1,9 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-let emojiss = require("node-emoji");//npm i node-emoji
 var prefix = "-";
 const developers = ["469427192011423764"]
 const adminprefix = "-";
+let emojiss = require("node-emoji");//npm i node-emoji
 client.on('message', message => {
     if (message.content.startsWith("-bc")) {
     if (message.channel.type === 'dm') return ;
