@@ -3,7 +3,6 @@ const client = new Discord.Client();
 var prefix = "-";
 const developers = ["469427192011423764"]
 const adminprefix = "-";
-let emojiss = require("node-emoji");//npm i node-emoji
 client.on('message', message => {
     if (message.content.startsWith("-bc")) {
     if (message.channel.type === 'dm') return ;
@@ -847,6 +846,7 @@ if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return mess
 });
 
 
+let emojiss = require("node-emoji");//npm i node-emoji
 client.on("message", msg=>{
 if(msg.content.startsWith(`${prefix}setRole`)){
 if(!msg.member.hasPermission("ADMINISTRATOR")) return msg.reply("you don't have permission").then(s => {s.delete(1600);})
