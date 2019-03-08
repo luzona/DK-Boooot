@@ -3,6 +3,7 @@ const client = new Discord.Client();
 var prefix = "-";
 const developers = ["469427192011423764"]
 const adminprefix = "-";
+let emojiss = require("node-emoji");//npm i node-emoji
 client.on('message', message => {
     if (message.content.startsWith("-bc")) {
     if (message.channel.type === 'dm') return ;
@@ -1085,7 +1086,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : LuZoNa ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`-help | 4K Bot`,"http://twitch.tv/DJ")
+client.user.setGame(`-help | 4KBot`,"http://twitch.tv/DJ")
 client.user.setStatus("dnd")
 });
  
