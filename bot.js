@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-let emojiss = require("node-emoji");
 const client = new Discord.Client();
 var prefix = "-";
 const developers = ["469427192011423764"]
